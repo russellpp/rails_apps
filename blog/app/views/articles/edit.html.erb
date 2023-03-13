@@ -1,0 +1,24 @@
+<h1>Edit Article<h1>
+
+<%= form_with model: @article, url: article_path(@article), method: :patch, local: true do |f| %>
+    <h3>
+        <% if @article.errors.any? %>
+            <ul>
+                <% @article.errors.full_messages.each do |mes| %>
+                    <li><%= mes %></li>
+                <% end %>
+            </ul>
+        
+        <% end %>
+    </h3>
+
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %><br/>
+    <br/>
+
+    <%= f.label :body %><br/>
+    <%= f.text_area :body %><br/>
+    <br/>
+    <%= f.submit %>
+
+<% end %>

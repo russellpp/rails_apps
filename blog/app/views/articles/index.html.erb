@@ -1,0 +1,32 @@
+
+
+<table >
+    <thead class="text-red-400">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Body</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        <tr>
+    </thead>
+    <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+                <td> <%= article.id %> </td>
+                <td> <%= article.name %> </td>
+                <td> <%= article.body %> </td>
+                <td> <%= link_to "Go to article", article_path(article) %> </td>
+                <td> <%= button_to "Edit", edit_article_path(article), method: :show %> </td>
+                <td> <%= button_to "Delete", article_path(article), method: :delete %> </td>
+            </tr>
+        <% end %>    
+    </tbody>
+</table>
+
+<br/>
+
+<%= link_to 'New Article', new_article_path %>
+
+<br/>

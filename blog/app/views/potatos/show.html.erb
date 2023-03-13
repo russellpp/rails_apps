@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @potato %>
+
+<div>
+  <%= link_to "Edit this potato", edit_potato_path(@potato) %> |
+  <%= link_to "Back to potatos", potatos_path %>
+
+  <%= button_to "Destroy this potato", @potato, method: :delete %>
+</div>
